@@ -30,6 +30,10 @@ sudo curl --silent --location -o /usr/local/bin/kubectl \
 #Change mode of kubectl
 sudo chmod +x /usr/local/bin/kubectl
 
+# Update your kubectl if its depricated 
+# aws eks update-kubeconfig --region us-east-2 --name my-aag-cluster
+
+
 #Install aws cli 
 #Skip this step if you have your aws cli configured already
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"

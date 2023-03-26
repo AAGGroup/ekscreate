@@ -1,10 +1,10 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: my-cluster
-  region: eu-west-2
+  name: my-aag-cluster
+  region: us-east-2
   version: "1.24"
-availabilityZones: ["eu-west-2a", "eu-west-2b"]
+availabilityZones: ["us-east-2a", "us-east-2b"]
 managedNodeGroups:
 - name: mynodegroup
   desiredCapacity: 2
@@ -22,7 +22,5 @@ managedNodeGroups:
       xRay: true
 iam:
   withOIDC: true
-karpenter:
-  version: '0.21.1'
 secretsEncryption:
-  keyARN: ${MASTER_ARN}
+  keyARN: arn:aws:kms:us-east-2:514132458783:key/d56cbfca-60fa-490e-b1bc-9ba1004e0430
